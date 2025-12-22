@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdOutlineEmail, MdPhone } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
@@ -48,11 +48,6 @@ const Contact = () => {
               <a href="mailto:sapnakushwah072@gmail.com" className="flex items-center gap-3 text-lg group hover:translate-x-2 transition-transform duration-300 text-white">
                 <MdOutlineEmail size={28} className="text-purple-400 group-hover:scale-110 transition-transform" />
                 <span className="group-hover:text-purple-400 transition-colors">sapnakushwah072@gmail.com</span>
-              </a>
-
-              <a href="tel:+919876543210" className="flex items-center gap-3 text-lg group hover:translate-x-2 transition-transform duration-300 text-white">
-                <MdPhone size={28} className="text-purple-400 group-hover:scale-110 transition-transform" />
-                <span className="group-hover:text-purple-400 transition-colors">+91 98765 43210</span>
               </a>
 
               <a href="https://linkedin.com/in/sapna-kushwah-1a29a9214" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-lg group hover:translate-x-2 transition-transform duration-300 text-white">
