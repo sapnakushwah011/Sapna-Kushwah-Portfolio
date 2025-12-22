@@ -4,7 +4,7 @@ import TextChange from "./TextChange";
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col md:flex-row justify-between items-center p-6 pt-24 md:p-20 md:pt-32 relative overflow-hidden">
+    <div id="Home" className="min-h-screen flex flex-col md:flex-row justify-between items-center p-6 pt-24 md:p-20 md:pt-32 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -12,7 +12,7 @@ const Home = () => {
       </div>
 
       <div className="md:w-1/2 z-10 space-y-6">
-        <h1 className="text-4xl md:text-7xl font-bold leading-tight tracking-tight text-white">
+        <h1 className="text-3xl md:text-6xl font-bold leading-tight tracking-tight text-white">
           <TextChange />
         </h1>
         <p className="text-lg md:text-2xl text-gray-300 tracking-tight">

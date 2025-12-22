@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const TextChange = () => {
   const texts = ["Hi, I'm Sapna", "I'm a Developer", "Welcome"];
