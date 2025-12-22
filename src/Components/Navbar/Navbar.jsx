@@ -57,7 +57,7 @@ const Navbar = () => {
       >
         {/* Logo */}
         <span className="text-3xl font-extrabold bg-linear-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent drop-shadow-lg">
-          Portfolio
+          Sapna Kushwah
         </span>
 
         {/* Desktop Links */}
