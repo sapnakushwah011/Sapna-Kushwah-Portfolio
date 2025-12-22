@@ -9,16 +9,22 @@ const Projects = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ProjectCard
-          title="Blogging Website"
-          main="A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support."
-        />
-        <ProjectCard
           title="Resume Builder"
           main="A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview."
+          demoLink="https://github.com/sapnakushwah011/Resume-builder"
+          githubLink="https://github.com/sapnakushwah011/Resume-builder"
+        />
+        <ProjectCard
+          title="Blogging Website"
+          main="A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support."
+          demoLink=""
+          githubLink=""
         />
         <ProjectCard
           title="Netflix Clone"
           main="Netflix-style streaming service with personalized recommendations and seamless playback experience."
+          demoLink=""
+          githubLink=""
         />
       </div>
     </div>
