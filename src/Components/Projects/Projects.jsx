@@ -1,0 +1,28 @@
+import React from "react";
+import ProjectCard from "./ProjectCard";
+
+const Projects = () => {
+  return (
+    <div id="Projects" className="p-6 md:p-24">
+      <h1 className="text-3xl md:text-5xl font-bold text-white mb-12 bg-linear-to-r from-blue-400 to-purple-600 bg-clip-text">
+        Featured Projects
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ProjectCard
+          title="Blogging Website"
+          main="A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support."
+        />
+        <ProjectCard
+          title="Resume Builder"
+          main="A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview."
+        />
+        <ProjectCard
+          title="Netflix Clone"
+          main="Netflix-style streaming service with personalized recommendations and seamless playback experience."
+        />
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
