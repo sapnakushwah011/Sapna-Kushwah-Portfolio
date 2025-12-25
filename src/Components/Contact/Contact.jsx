@@ -1,129 +1,86 @@
-import React, { useState } from "react";
-import { MdOutlineEmail } from "react-icons/md";
-import { CiLinkedin } from "react-icons/ci";
-import { FaGithub } from "react-icons/fa";
-import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React from "react";
+import { motion } from "framer-motion";
+import { FaLinkedinIn, FaGithub, FaTwitter } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const serviceID = "YOUR_SERVICE_ID";     // Replace with your EmailJS Service ID
-    const templateID = "YOUR_TEMPLATE_ID";   // Replace with your EmailJS Template ID
-    const publicKey = "YOUR_PUBLIC_KEY";     // Replace with your EmailJS Public Key
-
-    emailjs.send(serviceID, templateID, formData, publicKey)
-      .then(() => {
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      })
-      .catch(() => {
-        toast.error("Failed to send message. Try again!");
-      });
-  };
+  const socials = [
+    {
+      name: "Email",
+      icon: <MdEmail />,
+      link: "mailto:your.email@example.com",
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedinIn />,
+      link: "https://www.linkedin.com/in/your-profile",
+    },
+    {
+      name: "GitHub",
+      icon: <FaGithub />,
+      link: "https://github.com/your-username",
+    },
+    {
+      name: "Twitter",
+      icon: <FaTwitter />,
+      link: "https://twitter.com",
+    },
+  ];
 
   return (
-    <div id="Contact" className="p-6 md:p-24 bg-linear-to-b from-gray-900 to-gray-800 min-h-screen flex items-center justify-center">
-      <div className="relative w-full max-w-5xl bg-linear-to-br from-[#0a0e1a]/70 to-purple-900/20 backdrop-blur-md rounded-3xl p-8 md:p-16 border border-purple-500/20 shadow-xl">
-        <div className="absolute inset-0 bg-linear-to-r from-blue-500/10 to-purple-600/10 rounded-3xl pointer-events-none"></div>
-        
-        <div className="relative z-10 flex flex-col md:flex-row justify-between gap-10">
-          {/* Left: Intro & Social Links */}
-          <div className="flex-1 text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-bold bg-linear-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent mb-4">
-              Let's Connect
-            </h1>
-            <p className="text-lg md:text-2xl text-gray-300 mb-8">Feel free to reach out or send me a message directly!</p>
+    <section
+      id="contact"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-slate-50"
+    >
+      <div className="max-w-4xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-xs sm:text-sm uppercase tracking-widest text-indigo-600 font-medium mb-3 sm:mb-4 block">
+            Get In Touch
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+            Let's create something
+            <br />
+            <span className="font-semibold">beautiful together</span>
+          </h2>
+          <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
+            I'm always open to discussing new projects, creative ideas, or
+            opportunities to be part of your vision.
+          </p>
 
-            <div className="space-y-4">
-              <a href="mailto:sapnakushwah072@gmail.com" className="flex items-center gap-3 text-lg group hover:translate-x-2 transition-transform duration-300 text-white">
-                <MdOutlineEmail size={28} className="text-purple-400 group-hover:scale-110 transition-transform" />
-                <span className="group-hover:text-purple-400 transition-colors">sapnakushwah072@gmail.com</span>
-              </a>
+          <motion.a
+            href="mailto:sapnakushwah072@gmail.com"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-colors text-base sm:text-lg"
+          >
+            Start a conversation
+          </motion.a>
 
-              <a href="https://linkedin.com/in/sapna-kushwah-1a29a9214" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-lg group hover:translate-x-2 transition-transform duration-300 text-white">
-                <CiLinkedin size={28} className="text-purple-400 group-hover:scale-110 transition-transform" />
-                <span className="group-hover:text-purple-400 transition-colors">linkedin.com/in/sapna-kushwah-1a29a9214</span>
-              </a>
-
-              <a href="https://github.com/sapnakushwah011" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-lg group hover:translate-x-2 transition-transform duration-300 text-white">
-                <FaGithub size={28} className="text-purple-400 group-hover:scale-110 transition-transform" />
-                <span className="group-hover:text-purple-400 transition-colors">github.com/sapnakushwah011</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right: Contact Form */}
-          <div className="flex-1 bg-black/30 backdrop-blur-md p-6 rounded-2xl shadow-lg">
-            <h2 className="text-2xl font-semibold text-white mb-4">Send me a message</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full p-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-purple-500/20 focus:ring-2 focus:ring-purple-400 outline-none"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full p-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-purple-500/20 focus:ring-2 focus:ring-purple-400 outline-none"
-              />
-              <input
-                type="text"
-                name="phone"
-                placeholder="Your Phone Number"
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-purple-500/20 focus:ring-2 focus:ring-purple-400 outline-none"
-              />
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full p-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-purple-500/20 focus:ring-2 focus:ring-purple-400 outline-none resize-none"
-              />
-              <button
-                type="submit"
-                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+          <div className="mt-12 sm:mt-16 flex justify-center gap-6 sm:gap-8">
+            {socials.map((social, i) => (
+              <motion.a
+                key={social.name}
+                href={social.link}
+                target={social.name !== "Email" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex items-center gap-2 text-sm sm:text-base text-slate-500 hover:text-slate-900 transition-colors"
               >
-                Send Message
-              </button>
-            </form>
+                <span className="text-lg">{social.icon}</span>
+                {social.name}
+              </motion.a>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-
-      {/* Toast Container */}
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        pauseOnHover
-        draggable
-        theme="dark"
-      />
-    </div>
+    </section>
   );
 };
 

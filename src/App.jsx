@@ -9,7 +9,7 @@ import Contact from "./Components/Contact/Contact";
 
 function App() {
   return (
-    <div className="bg-linear-to-br from-[#0a0e1a] via-[#171d32] to-[#0a0e1a] min-h-screen overflow-hidden">
+    <div className="bg-linear-to-b from-slate-50 to-white min-h-screen overflow-hidden">
       <Navbar />
       <Home />
       <About />
