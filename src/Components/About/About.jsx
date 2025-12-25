@@ -47,10 +47,12 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Hi, I’m Sapna – a passionate Frontend Developer with 1.3 years of experience specializing in React.js and modern JavaScript.
+              I'm not your typical developer. I'm a curious soul who codes with passion and thinks in possibilities. 
+              With 1.3 years of React mastery under my belt, I've learned that the best interfaces aren't just built—they're crafted with intention.
             </p>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              I build responsive, scalable, and user-friendly interfaces with a strong focus on performance and clean code. Experienced in working with APIs, state management, and reusable component architecture.
+              I live for that moment when a user interacts with something I built and goes "Whoa, that's smooth!" 
+              That's my drug. That's what keeps me up at night coding and learning.
             </p>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               Always eager to learn, grow, and contribute to impactful frontend projects. I’m always looking to collaborate on innovative projects and grow as a developer. Let’s connect!

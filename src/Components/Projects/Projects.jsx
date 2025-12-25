@@ -15,14 +15,15 @@ const Projects = () => {
           githubLink="https://github.com/sapnakushwah011/Resume-builder"
         />
         <ProjectCard
+          title="Personal Portfolio"
+          main="A responsive personal portfolio website built using React and Tailwind CSS to showcase projects, skills, and experience with a clean and modern UI."
+          demoLink="https://sapna-kushwah-portfolio.vercel.app"
+          githubLink="https://github.com/sapnakushwah011/Sapna-Kushwah-Portfolio"
+        />
+
+        <ProjectCard
           title="Blogging Website"
           main="A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support."
-          demoLink=""
-          githubLink=""
-        />
-        <ProjectCard
-          title="Netflix Clone"
-          main="Netflix-style streaming service with personalized recommendations and seamless playback experience."
           demoLink=""
           githubLink=""
         />
