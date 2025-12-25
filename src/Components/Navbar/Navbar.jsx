@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +36,6 @@ const Navbar = () => {
     { name: "Experience", id: "experience" },
     { name: "Projects", id: "projects" },
     { name: "Contact", id: "contact" },
-    { name: "Resume", id: "resume" },
   ];
 
   const handleNavClick = (id) => {
