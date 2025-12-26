@@ -8,17 +8,17 @@ const Contact = () => {
     {
       name: "Email",
       icon: <MdEmail />,
-      link: "mailto:your.email@example.com",
+      link: "mailto:sapnakushwah072@gmail.com",
     },
     {
       name: "LinkedIn",
       icon: <FaLinkedinIn />,
-      link: "https://www.linkedin.com/in/your-profile",
+      link: "https://www.linkedin.com/in/sapna-kushwah-1a29a9214",
     },
     {
       name: "GitHub",
       icon: <FaGithub />,
-      link: "https://github.com/your-username",
+      link: "https://github.com/sapnakushwah011",
     },
     {
       name: "Twitter",
