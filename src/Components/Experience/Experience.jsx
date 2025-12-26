@@ -53,6 +53,9 @@ const Experience = () => {
     },
   ];
 
+  // Duplicate the tech stack for seamless loop
+  const duplicatedTechStack = [...techStack, ...techStack];
+
   return (
     <section
       id="experience"
@@ -84,32 +87,41 @@ const Experience = () => {
             Tech Stack
           </h3>
 
-          {/* Horizontal scroll container */}
-          <div className="flex gap-4 overflow-x-auto py-2 px-2 scrollbar-hide">
-            {techStack.map((tech, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.1, y: -5 }}
-                className="shrink-0 w-20 sm:w-24 bg-white p-3 sm:p-4 rounded-xl shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center justify-center"
-              >
-                <tech.Icon
-                  className="text-3xl sm:text-4xl mb-1 sm:mb-2"
-                  style={{ color: tech.color }}
-                />
-                <div className="text-[10px] sm:text-xs text-slate-600 font-medium">
-                  {tech.name}
+          {/* Auto-scroll container */}
+          <div className="overflow-hidden min-h-45 flex items-center py-6">
+            <motion.div
+              className="flex gap-8"
+              animate={{
+                x: [0, -50 * techStack.length],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 20,
+                  ease: "linear",
+                },
+              }}
+            >
+              {duplicatedTechStack.map((tech, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 w-20 sm:w-24 bg-white p-3 sm:p-4 rounded-xl shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center justify-center"
+                >
+                  <tech.Icon
+                    className="text-3xl sm:text-4xl mb-1 sm:mb-2"
+                    style={{ color: tech.color }}
+                  />
+                  <div className="text-[10px] sm:text-xs text-slate-600 font-medium">
+                    {tech.name}
+                  </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </motion.div>
           </div>
         </motion.div>
 
         {/* Timeline - Simplified for Mobile */}
-
         <div className="max-w-4xl mx-auto relative">
           <div className="absolute left-4 sm:left-8 lg:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-indigo-500 to-purple-500" />
 

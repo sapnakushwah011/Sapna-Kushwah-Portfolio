@@ -23,7 +23,7 @@ const Contact = () => {
     {
       name: "Twitter",
       icon: <FaTwitter />,
-      link: "https://twitter.com",
+      link: "https://twitter.com/SapnaKushwah13",
     },
   ];
 
