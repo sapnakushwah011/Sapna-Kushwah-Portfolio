@@ -30,7 +30,7 @@ const About = () => {
         >
           <p>
             Hi, I'm Sapna—a frontend developer who believes great design and clean code go hand in hand.
-            With <span className="text-slate-900 font-medium">1.3 years of experience</span>, I specialize in React.js and modern web technologies.
+            With <span className="text-slate-900 font-medium">1.5 years of experience</span>, I specialize in React.js and modern web technologies.
           </p>
           <p>
             I thrive on transforming ideas into intuitive, performant interfaces. Whether it's building reusable components, 

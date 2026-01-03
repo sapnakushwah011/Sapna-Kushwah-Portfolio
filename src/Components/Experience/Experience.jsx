@@ -14,6 +14,7 @@ import {
   SiExpress,
   SiMysql,
   SiTypescript,
+  SiNextdotjs,
 } from "react-icons/si";
 
 const Experience = () => {
@@ -21,6 +22,7 @@ const Experience = () => {
     { Icon: FaReact, color: "#61DAFB", name: "React.js" },
     { Icon: FaJs, color: "#F7DF1E", name: "JavaScript" },
     { Icon: SiTypescript, color: "#3178C6", name: "TypeScript" },
+    { Icon: SiNextdotjs, color: "#000000", name: "Next.js" },
     { Icon: SiRedux, color: "#764ABC", name: "Redux" },
     { Icon: FaHtml5, color: "#E34F26", name: "HTML" },
     { Icon: FaCss3, color: "#1572B6", name: "CSS" },

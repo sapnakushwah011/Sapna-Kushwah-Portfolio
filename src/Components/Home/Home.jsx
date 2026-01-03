@@ -43,7 +43,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-sm sm:text-base md:text-lg text-slate-600 mb-8 sm:mb-12 max-w-lg mx-auto md:mx-0 leading-relaxed px-2 sm:px-0"
         >
-          React specialist with 1.3 years of experience turning complex problems
+          React specialist with 1.5 years of experience turning complex problems
           into elegant, user-friendly solutions.
         </motion.p>
 
