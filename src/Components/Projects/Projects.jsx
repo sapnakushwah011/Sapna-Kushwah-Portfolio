@@ -60,7 +60,7 @@ const Projects = () => {
       description: "A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support for content creation.",
       tech: ["Next.js", "TypeScript", "MongoDB"],
       status: "In Progress",
-      demoLink: "https://github.com/sapnakushwah011/blog-app",
+      demoLink: "https://blog-app-rho-indol.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/blog-app",
     },
   ];
