@@ -30,7 +30,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-slate-50"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-slate-50 dark:bg-slate-950"
     >
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
@@ -41,12 +41,12 @@ const Contact = () => {
           <span className="text-xs sm:text-sm uppercase tracking-widest text-indigo-600 font-medium mb-3 sm:mb-4 block">
             Get In Touch
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 mb-4 sm:mb-6 leading-tight px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-slate-900 dark:text-white mb-4 sm:mb-6 leading-tight px-4">
             Let's create something
             <br />
             <span className="font-semibold">beautiful together</span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-8 sm:mb-12 max-w-2xl mx-auto px-4">
             I'm always open to discussing new projects, creative ideas, or
             opportunities to be part of your vision.
           </p>
@@ -55,7 +55,7 @@ const Contact = () => {
             href="mailto:sapnakushwah072@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-colors text-base sm:text-lg"
+            className="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-medium hover:bg-slate-800 dark:hover:bg-white transition-colors text-base sm:text-lg"
           >
             Start a conversation
           </motion.a>
@@ -71,7 +71,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-center gap-2 text-sm sm:text-base text-slate-500 hover:text-slate-900 transition-colors"
+                className="flex items-center gap-2 text-sm sm:text-base text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
               >
                 <span className="text-lg">{social.icon}</span>
                 {social.name}

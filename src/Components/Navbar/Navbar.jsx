@@ -5,7 +5,19 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    // Apply initial theme to document
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +41,10 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };  
 
   const navItems = [
     { name: "Home", id: "home" },
@@ -65,7 +81,7 @@ const Navbar = () => {
           scrolled
             ? "bg-white/80 backdrop-blur-md shadow-sm"
             : "bg-transparent"
-        }`}
+        } dark:bg-slate-900/80`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20">
@@ -73,7 +89,7 @@ const Navbar = () => {
               onClick={() => handleNavClick("home")}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-xl sm:text-2xl font-light tracking-tight text-slate-900"
+              className="text-xl sm:text-2xl font-light tracking-tight text-slate-900 dark:text-white"
             >
               Sapna Kushwah
             </motion.button>
@@ -94,25 +110,62 @@ const Navbar = () => {
                   className={`relative text-sm tracking-wide transition-colors ${
                     activeSection === item.id && !item.isExternal
                       ? "text-slate-900"
-                      : "text-slate-600 hover:text-slate-900"
-                  }`}
+                      : "text-slate-600 hover:text-slate-900 dark:hover:text-white"
+                  } dark:text-slate-400`}
                 >
                   {item.name}
                   {activeSection === item.id && !item.isExternal && (
                     <motion.div
                       layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-slate-900"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-slate-900 dark:bg-slate-400"
                     />
                   )}
                 </motion.a>
               ))}
+
+              {/* Theme Toggle Button */}
+              <motion.button
+                onClick={toggleDarkMode}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                className="p-2 rounded-lg text-slate-600 dark:text-slate-400 dark:hover:text-white"
+                aria-label="Toggle theme"
+              >
+                {darkMode ? (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                ) : (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                )}
+              </motion.button>
             </div>
 
             {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center gap-2">
+              <motion.button
+                onClick={toggleDarkMode}
+                className="text-slate-900 dark:text-white p-2"
+                aria-label="Toggle theme"
+              >
+                {darkMode ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                  </svg>
+                )}
+              </motion.button>
+
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-slate-900 p-2"
+              className="md:hidden text-slate-900 dark:text-white p-2"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -145,6 +198,7 @@ const Navbar = () => {
                 </svg>
               )}
             </motion.button>
+            </div>
           </div>
         </div>
       </motion.nav>
@@ -165,7 +219,7 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3 }}
-              className="fixed top-0 right-0 bottom-0 w-64 bg-white shadow-2xl z-40 md:hidden overflow-y-auto scrollbar-hide"
+              className="fixed top-0 right-0 bottom-0 w-64 bg-white dark:bg-slate-900 shadow-2xl z-40 md:hidden overflow-y-auto scrollbar-hide"
               style={{
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
@@ -175,7 +229,7 @@ const Navbar = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setMobileMenuOpen(false)}
-                className="sticky top-5 left-full -ml-11 text-slate-900 p-2 z-10"
+                className="sticky top-5 left-full -ml-11 text-slate-900 dark:text-white p-2 z-10"
                 aria-label="Close menu"
               >
                 <svg
@@ -205,11 +259,11 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className={`py-4 text-lg border-b border-slate-100 transition-colors ${
+                    className={`py-4 text-lg border-b border-slate-100 dark:border-slate-800 transition-colors ${
                       activeSection === item.id && !item.isExternal
-                        ? "text-indigo-600 font-semibold"
-                        : "text-slate-600"
-                    }`}
+                        ? "text-indigo-600 dark:text-indigo font-semibold"
+                        : "text-slate-600 dark:text-slate-400"
+                    } `}
                   >
                     {item.name}
                   </motion.a>

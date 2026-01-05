@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 lg:px-20 bg-linear-to-b from-slate-50 to-white mt-10 sm:mt-12 md:mt-14"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 lg:px-20 bg-linear-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 transition-colors duration-300 mt-10 sm:mt-12 md:mt-14"
     >
       {/* Left Side - Text Content */}
       <motion.div
@@ -27,7 +27,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-4 sm:mb-6 leading-tight px-2 sm:px-0"
         >
           Sapna Kushwah
         </motion.h1>
@@ -36,7 +36,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-sm sm:text-base md:text-lg text-slate-600 mb-8 sm:mb-12 max-w-lg mx-auto md:mx-0 leading-relaxed px-2 sm:px-0"
+          className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-400 mb-8 sm:mb-12 max-w-lg mx-auto md:mx-0 leading-relaxed px-2 sm:px-0"
         >
           Frontend specialist with 1.5 years of experience turning complex problems
           into elegant, user-friendly solutions.
@@ -52,7 +52,7 @@ const Home = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-slate-900 text-white rounded-full font-medium hover:bg-slate-800 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-medium hover:bg-slate-800 dark:hover:bg-white transition-colors"
             >
               Get in touch
             </motion.button>
@@ -61,7 +61,7 @@ const Home = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base border-2 border-slate-900 text-slate-900 rounded-full font-medium hover:bg-slate-50 transition-colors"
+              className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white rounded-full font-medium hover:bg-slate-50 dark:hover:bg-transparent transition-colors"
             >
               View my work
             </motion.button>

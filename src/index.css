@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* ✅ Enable dark variant manually (Tailwind v4 fix) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide scrollbars globally */
+html, body {
+  overflow-y: scroll; /* keep scrolling */
+  overflow-x: hidden; /* no horizontal scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px; /* hide horizontal scrollbar if any */
+}

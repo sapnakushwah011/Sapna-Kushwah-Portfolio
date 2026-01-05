@@ -61,7 +61,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-slate-50"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-slate-50 dark:bg-slate-950 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto">
         <motion.div
@@ -73,7 +73,7 @@ const Experience = () => {
           <span className="text-xs sm:text-sm uppercase tracking-widest text-indigo-600 font-medium mb-3 sm:mb-4 block text-center">
             Experience & Skills
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-900 text-center px-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-slate-900 dark:text-white text-center px-4">
             My professional <span className="font-semibold">journey</span>
           </h2>
         </motion.div>
@@ -85,7 +85,7 @@ const Experience = () => {
           viewport={{ once: true }}
           className="mb-12 sm:mb-16 lg:mb-20"
         >
-          <h3 className="text-xl sm:text-2xl font-medium text-slate-900 mb-6 sm:mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-medium text-slate-900 dark:text-white mb-6 sm:mb-8 text-center">
             Tech Stack
           </h3>
 
@@ -108,13 +108,13 @@ const Experience = () => {
               {duplicatedTechStack.map((tech, i) => (
                 <div
                   key={i}
-                  className="shrink-0 w-20 sm:w-24 bg-white p-3 sm:p-4 rounded-xl shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center justify-center"
+                  className="shrink-0 w-20 sm:w-24 bg-white dark:bg-slate-900 p-3 sm:p-4 rounded-xl shadow-sm hover:shadow-md transition-all text-center flex flex-col items-center justify-center"
                 >
                   <tech.Icon
                     className="text-3xl sm:text-4xl mb-1 sm:mb-2"
                     style={{ color: tech.color }}
                   />
-                  <div className="text-[10px] sm:text-xs text-slate-600 font-medium">
+                  <div className="text-[10px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">
                     {tech.name}
                   </div>
                 </div>
@@ -149,18 +149,18 @@ const Experience = () => {
               >
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-white p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-all"
+                  className="bg-white dark:bg-slate-900 p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-md transition-all"
                 >
                   <div className="text-xs sm:text-sm text-indigo-600 font-medium mb-2">
                     {exp.date}
                   </div>
-                  <h4 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-1">
+                  <h4 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-1">
                     {exp.title}
                   </h4>
-                  <p className="text-base sm:text-lg text-slate-600 mb-3 sm:mb-4">
+                  <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-3 sm:mb-4">
                     {exp.company}
                   </p>
-                  <ul className="space-y-2 sm:space-y-3 text-slate-600">
+                  <ul className="space-y-2 sm:space-y-3 text-slate-600 dark:text-slate-400">
                     {exp.description.map((item, j) => (
                       <li
                         key={j}
