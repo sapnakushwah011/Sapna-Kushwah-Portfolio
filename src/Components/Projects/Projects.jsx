@@ -62,11 +62,18 @@ const Projects = () => {
               className="bg-slate-50 dark:bg-slate-900 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all"
             >
               <div className="h-48 sm:h-56 bg-linear-to-br from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center">
-                <img 
-                  className="w-full h-full object-cover" 
-                  src={project.bannerImg ? project.bannerImg : bannerImg} 
-                  alt={project.title} 
-                />
+                <a
+                  href={project.demoLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full h-full object-cover"
+                >
+                  <img 
+                    className="w-full h-full object-cover" 
+                    src={project.bannerImg ? project.bannerImg : bannerImg} 
+                    alt={project.title} 
+                  />
+                </a>
               </div>
 
               <div className="p-5 sm:p-6">
@@ -75,7 +82,15 @@ const Projects = () => {
                     {project.status}
                   </span>
                 )}
-                <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 mb-2 sm:mb-3">{project.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-2 sm:mb-3">
+                  <a                   
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.title}
+                  </a>
+                </h3>
                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3 sm:mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
@@ -86,7 +101,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-2 sm:gap-3">
+                {/* <div className="flex gap-2 sm:gap-3">
                   {project.demoLink && (
                     <a
                       href={project.demoLink}
@@ -107,7 +122,7 @@ const Projects = () => {
                       Code
                     </a>
                   )}
-                </div>
+                </div> */}
               </div>
             </motion.article>
           ))}
