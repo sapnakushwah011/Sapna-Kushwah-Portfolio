@@ -5,8 +5,15 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const { scrollYProgress } = useScroll();
+
+  // Load initial theme from localStorage if available
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("darkMode") === "true";
+    }
+    return false;
+  });
 
   useEffect(() => {
     // Apply initial theme to document
@@ -17,6 +24,7 @@ const Navbar = () => {
       document.documentElement.classList.remove('dark');
       document.body.classList.remove('dark');
     }
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);  
 
   useEffect(() => {
