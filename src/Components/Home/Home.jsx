@@ -1,21 +1,16 @@
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import avatarImg from "../../assets/7358602-removebg-preview.png";
 
 const Home = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-4 sm:px-6 lg:px-20 bg-linear-to-b from-slate-50 to-white mt-10 sm:mt-12 md:mt-14"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 lg:px-20 bg-linear-to-b from-slate-50 to-white mt-10 sm:mt-12 md:mt-14"
     >
       {/* Left Side - Text Content */}
       <motion.div
-        style={{ y, opacity }}
-        className="w-full md:w-1/2 text-center md:text-left pt-12 md:pt-0"
+        className="w-full md:w-1/2 text-center md:text-left pt-12 md:pt-0 order-1 md:order-1"
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -24,7 +19,7 @@ const Home = () => {
           className="mb-4 sm:mb-6"
         >
           <span className="text-md uppercase tracking-widest text-indigo-600 font-medium">
-            Frontend Developer
+            Full Stack Developer
           </span>
         </motion.div>
 
@@ -43,7 +38,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-sm sm:text-base md:text-lg text-slate-600 mb-8 sm:mb-12 max-w-lg mx-auto md:mx-0 leading-relaxed px-2 sm:px-0"
         >
-          React specialist with 1.5 years of experience turning complex problems
+          Frontend specialist with 1.5 years of experience turning complex problems
           into elegant, user-friendly solutions.
         </motion.p>
 
@@ -79,7 +74,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="w-full md:w-1/2 flex justify-center md:justify-end mb-12 md:mb-0"
+        className="w-full md:w-1/2 flex justify-center md:justify-end mb-12 md:mb-0 order-2 md:order-2"
       >
         <img
           className="relative w-72 md:w-96 drop-shadow-2xl"
