@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 import bannerImg from "../../assets/photo-C8q0KQHG.webp";
 import portfolioImg from "../../assets/portfolio.png";
 
+const statusDotColor = {
+  building: "bg-yellow-400",
+  completed: "bg-green-500",
+};
+
 const Projects = () => {
   const projects = [
     {
@@ -16,20 +21,20 @@ const Projects = () => {
       bannerImg: portfolioImg,
     },
     {
+      title: "Blogging Platform",
+      description: "A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support for content creation.",
+      tech: ["Next.js", "TypeScript", "MongoDB"],
+      status: "Building",
+      demoLink: "https://github.com/sapnakushwah011/blog-app",
+      githubLink: "https://github.com/sapnakushwah011/blog-app",
+    },    
+    {
       title: "Resume Builder",
       description: "A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview.",
       tech: ["React", "PDF Generation", "Local Storage"],
       demoLink: "https://github.com/sapnakushwah011/Resume-builder",
       githubLink: "https://github.com/sapnakushwah011/Resume-builder",
       status: "Completed",
-    },
-    {
-      title: "Blogging Platform",
-      description: "A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support for content creation.",
-      tech: ["Next.js", "TypeScript", "MongoDB"],
-      status: "In Progress",
-      demoLink: "https://github.com/sapnakushwah011/blog-app",
-      githubLink: "https://github.com/sapnakushwah011/blog-app",
     },
   ];
 
@@ -78,9 +83,18 @@ const Projects = () => {
 
               <div className="p-5 sm:p-6">
                 {project.status && (
-                  <span className="inline-block px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-slate-800 dark:text-white rounded-full mb-3">
-                    {project.status}
-                  </span>
+<span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-slate-800 dark:text-white rounded-full mb-3">
+  <span
+    className={`w-2 h-2 rounded-full ${
+      statusDotColor[project.status?.toLowerCase()] || "bg-gray-400"
+    }`}
+  ></span>
+  {project.status}
+</span>
+
+                  // <span className="inline-block px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-slate-800 dark:text-white rounded-full mb-3">
+                  //   {project.status}
+                  // </span>
                 )}
                 <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-2 sm:mb-3">
                   <a                   
