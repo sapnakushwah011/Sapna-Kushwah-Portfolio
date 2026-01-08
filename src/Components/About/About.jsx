@@ -50,7 +50,7 @@ const About = () => {
       >
         {[
           { number: "1.5", label: "Years Experience" },
-          { number: "15+", label: "Projects" },
+          { number: "10+", label: "Projects" },
           { number: "100%", label: "Satisfaction" },
           { number: "∞", label: "Learning" },
         ].map((stat, i) => (
