@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import bannerImg from "../../assets/photo-C8q0KQHG.webp";
 import portfolioImg from "../../assets/portfolio.png";
+import blogImg from '../../assets/blog.png';
 
 const statusDotColor = {
   building: "bg-yellow-400",
@@ -25,14 +26,15 @@ const Projects = () => {
       description: "A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support for content creation.",
       tech: ["Next.js", "TypeScript", "MongoDB"],
       status: "Building",
-      demoLink: "https://github.com/sapnakushwah011/blog-app",
+      demoLink: "https://blog-app-rho-indol.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/blog-app",
+      bannerImg: blogImg,
     },    
     {
       title: "Resume Builder",
       description: "A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview.",
       tech: ["React", "PDF Generation", "Local Storage"],
-      demoLink: "https://github.com/sapnakushwah011/Resume-builder",
+      demoLink: "https://sapna-kushwah-portfolio.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/Resume-builder",
       status: "Completed",
     },
