@@ -3,7 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import bannerImg from "../../assets/photo-C8q0KQHG.webp";
 import portfolioImg from "../../assets/portfolio.png";
-import blogImg from '../../assets/blog.png';
+import blogImg from "../../assets/blog.png";
+import { FaReact } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiMongodb,
+  SiFramer,
+} from "react-icons/si";
 
 const statusDotColor = {
   building: "bg-yellow-400",
@@ -14,26 +22,77 @@ const Projects = () => {
   const projects = [
     {
       title: "Personal Portfolio",
-      description: "A responsive personal portfolio website built using React and Tailwind CSS to showcase projects, skills, and experience with a clean and modern UI.",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      description:
+        "A responsive personal portfolio website built using React and Tailwind CSS to showcase projects, skills, and experience with a clean and modern UI.",
+      tech: [
+        {
+          name: "React",
+          icon: <FaReact className="inline mr-1" />,
+          color: "bg-blue-100 text-blue-700",
+        },
+        {
+          name: "Tailwind CSS",
+          icon: <SiTailwindcss className="inline mr-1" />,
+          color: "bg-teal-100 text-teal-700",
+        },
+        {
+          name: "Framer Motion",
+          icon: <SiFramer className="inline mr-1" />,
+          color: "bg-pink-100 text-pink-700",
+        },
+      ],
       demoLink: "https://sapna-kushwah-portfolio.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/Sapna-Kushwah-Portfolio",
       status: "Building",
       bannerImg: portfolioImg,
     },
     {
-      title: "Blogging Platform",
-      description: "A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support for content creation.",
-      tech: ["Next.js", "TypeScript", "MongoDB"],
+      title: "Draftly (Blogging Platform)",
+      description:
+        "A full-stack blogging platform built with Next.js, featuring real-time collaboration and markdown support for content creation.",
+      tech: [
+        {
+          name: "Next.js",
+          icon: <SiNextdotjs className="inline mr-1" />,
+          color: "bg-gray-100 text-gray-800",
+        },
+        {
+          name: "TypeScript",
+          icon: <SiTypescript className="inline mr-1" />,
+          color: "bg-blue-100 text-blue-800",
+        },
+        {
+          name: "MongoDB",
+          icon: <SiMongodb className="inline mr-1" />,
+          color: "bg-green-100 text-green-800",
+        },
+      ],
       status: "Building",
       demoLink: "https://blog-app-rho-indol.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/blog-app",
       bannerImg: blogImg,
-    },    
+    },
     {
       title: "Resume Builder",
-      description: "A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview.",
-      tech: ["React", "PDF Generation", "Local Storage"],
+      description:
+        "A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview.",
+      tech: [
+        {
+          name: "React",
+          icon: <FaReact className="inline mr-1" />,
+          color: "bg-blue-100 text-blue-700",
+        },
+        {
+          name: "PDF Generation",
+          icon: null,
+          color: "bg-gray-100 text-gray-700",
+        },
+        {
+          name: "Local Storage",
+          icon: null,
+          color: "bg-gray-100 text-gray-700",
+        },
+      ],
       demoLink: "https://sapna-kushwah-portfolio.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/Resume-builder",
       status: "Completed",
@@ -41,7 +100,10 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-white dark:bg-slate-950">
+    <section
+      id="projects"
+      className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-white dark:bg-slate-950"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -75,31 +137,28 @@ const Projects = () => {
                   rel="noopener noreferrer"
                   className="w-full h-full object-cover"
                 >
-                  <img 
-                    className="w-full h-full object-cover" 
-                    src={project.bannerImg ? project.bannerImg : bannerImg} 
-                    alt={project.title} 
+                  <img
+                    className="w-full h-full object-cover"
+                    src={project.bannerImg ? project.bannerImg : bannerImg}
+                    alt={project.title}
                   />
                 </a>
               </div>
 
               <div className="p-5 sm:p-6">
                 {project.status && (
-<span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-slate-800 dark:text-white rounded-full mb-3">
-  <span
-    className={`w-2 h-2 rounded-full ${
-      statusDotColor[project.status?.toLowerCase()] || "bg-gray-400"
-    }`}
-  ></span>
-  {project.status}
-</span>
-
-                  // <span className="inline-block px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-slate-800 dark:text-white rounded-full mb-3">
-                  //   {project.status}
-                  // </span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-700 dark:bg-slate-800 dark:text-white rounded-full mb-3">
+                    <span
+                      className={`w-2 h-2 rounded-full ${
+                        statusDotColor[project.status?.toLowerCase()] ||
+                        "bg-gray-400"
+                      }`}
+                    ></span>
+                    {project.status}
+                  </span>
                 )}
                 <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white mb-2 sm:mb-3">
-                  <a                   
+                  <a
                     href={project.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -107,12 +166,18 @@ const Projects = () => {
                     {project.title}
                   </a>
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3 sm:mb-4">{project.description}</p>
-                
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-3 sm:mb-4">
+                  {project.description}
+                </p>
+
                 <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                   {project.tech.map((tech, j) => (
-                    <span key={j} className="px-2 sm:px-3 py-1 bg-white text-slate-600 dark:bg-slate-800 dark:text-white rounded-full text-xs">
-                      {tech}
+                    <span
+                      key={j}
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs flex items-center ${tech.color}`}
+                    >
+                      {tech.icon}
+                      {tech.name}
                     </span>
                   ))}
                 </div>
