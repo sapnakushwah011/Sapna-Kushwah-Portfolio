@@ -11,6 +11,7 @@ import {
   SiTypescript,
   SiMongodb,
   SiFramer,
+  SiExpress,
 } from "react-icons/si";
 
 const statusDotColor = {
@@ -45,6 +46,37 @@ const Projects = () => {
       githubLink: "https://github.com/sapnakushwah011/Sapna-Kushwah-Portfolio",
       status: "Building",
       bannerImg: portfolioImg,
+    },
+        {
+      title: "ClientNest (CRM)",
+      description:
+        "A lightweight CRM designed to help freelancers and small agencies manage clients, track projects, and stay organized effortlessly.",
+      tech: [
+        {
+          name: "React",
+          icon: <FaReact className="inline mr-1" />,
+          color: "bg-blue-100 text-blue-700",
+        },
+        {
+          name: "Tailwind CSS",
+          icon: <SiTailwindcss className="inline mr-1" />,
+          color: "bg-teal-100 text-teal-700",
+        },
+        {
+          name: "Express.js",
+          icon: <SiExpress className="inline mr-1" />,
+          color: "bg-gray-200 text-[#000000]",
+        },
+        {
+          name: "MongoDB",
+          icon: <SiMongodb className="inline mr-1" />,
+          color: "bg-green-100 text-green-800",
+        },
+      ],
+      status: "Building",
+      demoLink: "https://blog-app-rho-indol.vercel.app",
+      githubLink: "https://github.com/sapnakushwah011/crm-project-frontend",
+      // bannerImg: blogImg,
     },
     {
       title: "Draftly (Blogging Platform)",
