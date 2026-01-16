@@ -3,7 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import bannerImg from "../../assets/photo-C8q0KQHG.webp";
 import portfolioImg from "../../assets/portfolio.png";
-import blogImg from "../../assets/Draftly.png";
+import blogImg from "../../assets/draftly.png";
 import { FaReact } from "react-icons/fa";
 import {
   SiNextdotjs,
