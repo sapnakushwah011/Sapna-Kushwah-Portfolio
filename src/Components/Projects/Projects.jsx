@@ -74,9 +74,9 @@ const Projects = () => {
         },
       ],
       status: "Building",
-      demoLink: "https://blog-app-rho-indol.vercel.app",
+      demoLink: "https://sapna-kushwah-portfolio.vercel.app",
       githubLink: "https://github.com/sapnakushwah011/crm-project-frontend",
-      // bannerImg: blogImg,
+      // bannerImg: ,
     },
     {
       title: "Draftly (Blogging Platform)",
