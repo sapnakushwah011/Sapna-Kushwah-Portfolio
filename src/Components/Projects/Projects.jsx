@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import bannerImg from "../../assets/photo-C8q0KQHG.webp";
 import portfolioImg from "../../assets/portfolio.png";
 import blogImg from "../../assets/draftly.png";
+import resumeBuilderImg from "../../assets/resume-builder.png";
+
 import { FaReact } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -110,9 +112,9 @@ const Projects = () => {
         "A web-based Resume Builder application that allows users to create, edit, and download professional resumes with customizable templates and real-time preview.",
       tech: [
         {
-          name: "React",
-          icon: <FaReact className="inline mr-1" />,
-          color: "bg-blue-100 text-blue-700",
+          name: "Next.js",
+          icon: <SiNextdotjs className="inline mr-1" />,
+          color: "bg-gray-100 text-gray-800",
         },
         {
           name: "PDF Generation",
@@ -120,14 +122,15 @@ const Projects = () => {
           color: "bg-gray-100 text-gray-700",
         },
         {
-          name: "Local Storage",
-          icon: null,
-          color: "bg-gray-100 text-gray-700",
+          name: "TypeScript",
+          icon: <SiTypescript className="inline mr-1" />,
+          color: "bg-blue-100 text-blue-800",
         },
       ],
-      demoLink: "https://sapna-kushwah-portfolio.vercel.app",
-      githubLink: "https://github.com/sapnakushwah011/Resume-builder",
+      demoLink: "https://resume-builder-next-three.vercel.app/",
+      githubLink: "https://github.com/sapnakushwah011/resume-builder-next",
       status: "Completed",
+      bannerImg: resumeBuilderImg,
     },
   ];
 
