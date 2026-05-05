@@ -66,7 +66,7 @@ const Navbar = () => {
   const handleNavClick = (id, isExternal) => {
     setMobileMenuOpen(false);
     if (isExternal) {
-      window.open("/Sapna Kushwah.pdf", "_blank", "noopener,noreferrer");
+      window.open("/Sapna_Kushwah_2y.pdf", "_blank", "noopener,noreferrer");
     } else {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     }

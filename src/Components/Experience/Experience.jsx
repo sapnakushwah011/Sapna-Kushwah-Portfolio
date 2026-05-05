@@ -35,6 +35,16 @@ const Experience = () => {
 
   const experiences = [
     {
+      title: "Associate Software Engineer",
+      company: "MandelBulb Technologies",
+      date: "April 2026 — Present",
+      description: [
+        "Developed responsive and scalable web applications using React.js, ensuring high performance and seamless user experience.",
+        "Enhanced application performance through optimization techniques, improving load times and overall usability.",
+        "Built and maintained modern frontend architectures using React Hooks, Redux, Zustand, and TypeScript.",
+      ],
+    },
+    {
       title: "Frontend Developer",
       company: "TechCarrel LLP",
       date: "Aug 2024 — Nov 2024",
